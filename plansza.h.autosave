@@ -1,0 +1,40 @@
+#ifndef PLANSZA_H
+#define PLANSZA_H
+
+
+class Plansza
+{
+private:
+    int szerokosc;
+    int wysokosc;
+    bool **tab = nullptr;
+public:
+    Plansza(int wiersze, int kolumny) : szerokosc(kolumny), wysokosc(wiersze) {
+        tab= new bool*[wiersze];
+        for (int i = 0; i < wiersze; i++) {
+          tab[i] = new bool[kolumny];
+        }
+    }
+    
+    void alok(){
+        **tab = new bool*[szerokosc];
+        tab[0] = new bool[szerokosc*wysokosc];
+        
+        for(int i = 0; i<szerokosc; i++){
+            tab[i] = &tab[0][i*wysokosc];
+        }
+    }
+    
+    ~Plansza(){
+        for (int i = 0; i < wysokosc; i++) {
+             delete[] tab[i];
+           }
+           delete[] tab;
+        if(tab != nullptr){
+            ta
+        }
+    }
+    
+};
+
+#endif
