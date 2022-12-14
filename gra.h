@@ -1,14 +1,15 @@
 #ifndef GRA_H
 #define GRA_H
+#include "plansza.h"
 
 #include<vector>
 
 class Gra
 {   bool czy_losowac = false;
     int rozmiar_planszy = 100;
-    int Szerokosc;
-    int Wysokosc;
-    std::vector<std::vector<bool>> plansza(std::vector<bool>(getRozmiar_planszy()));
+    int kol;
+    int wie;
+    Plansza plansza(int wie, int kol);
 public:
     Gra();
 
@@ -17,9 +18,9 @@ public:
     int getSzerokosc();
     int getWysokosc();
 
-    void inicjalizacjaStartowa(std::vector<std::vector<bool>> plansza);
+    void inicjalizacjaStartowa(Plansza plansza);
 
-    int ZliczSasiadow(std::vector<std::vector<bool>> &plansza, int x, int y);
+    int ZliczSasiadow(Plansza &plansza, int x, int y);
 };
 
 
