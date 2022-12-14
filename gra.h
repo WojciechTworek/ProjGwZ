@@ -6,21 +6,15 @@
 
 class Gra
 {   bool czy_losowac = false;
-    int rozmiar_planszy = 100;
-    int kol;
-    int wie;
-    Plansza plansza(int wie, int kol);
+    Plansza plansza;
 public:
-    Gra();
+    Gra(int i_wiersze, int i_kolumny);
 
-    int getRozmiar_planszy();
     bool getCzy_losowac();
-    int getSzerokosc();
-    int getWysokosc();
 
-    void inicjalizacjaStartowa(Plansza plansza);
+    void inicjalizacjaStartowa();
 
-    int ZliczSasiadow(Plansza &plansza, int x, int y);
+    int ZliczSasiadow(int x, int y);
 };
 
 

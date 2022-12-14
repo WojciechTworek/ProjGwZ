@@ -20,12 +20,21 @@ Plansza::Plansza(int wiersze,int kolumny){
     alokuj();
 }
 
-int Plansza::getSzerokosc(){return m_kolumny;}
-int Plansza::getWysokosc(){return m_wiersze;}
-int Plansza::getIlkom(){return m_kolumny*m_wiersze;}
+int Plansza::getIlkolumn(){return m_kolumny;}
+int Plansza::getIlwierszy(){return m_wiersze;}
+
 
 void Plansza::setWielkosc(int wiersze,int kolumny){
+    Plansza nowa_plansza(wiersze,kolumny);
 
+        for(int i = 0;i<wiersze;i++){
+            for(int j = 0;j<kolumny;j++){
+                nowa_plansza.tab[i][j] = this->tab[i][j];
+            }
+        }
+
+        this->dealokacja();
+        this->tab=nowa_plansza.tab;
 }
 
 Plansza::~Plansza(){
@@ -35,3 +44,6 @@ Plansza::~Plansza(){
        delete[] tab;
 }
 
+bool* Plansza::operator[](int i){
+    return this->tab[i];
+}

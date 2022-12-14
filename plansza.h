@@ -14,13 +14,14 @@ private:
 public:
     Plansza(int wiersze, int kolumny);
 
-    int getSzerokosc();
-    int getWysokosc();
-    int getIlkom();
+    int getIlkolumn();
+    int getIlwierszy();
 
     void setWielkosc(int wiersze, int kolumny);
 
     ~Plansza();
+
+    bool* operator[](int i);
 };
 
 #endif // PLANSZA_H
