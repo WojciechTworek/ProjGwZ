@@ -19,6 +19,9 @@ public:
 
     void setWielkosc(int wiersze, int kolumny);
 
+    int size();
+    void clear();
+
     ~Plansza();
 
     bool* operator[](int i);

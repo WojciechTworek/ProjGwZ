@@ -37,6 +37,16 @@ void Plansza::setWielkosc(int wiersze,int kolumny){
         this->tab=nowa_plansza.tab;
 }
 
+int Plansza::size(){
+    return (m_kolumny*m_wiersze)/2;
+}
+
+void Plansza::clear(){
+    for (int i = 0; i < m_wiersze; i++) {
+        delete[] tab[i];
+    }
+}
+
 Plansza::~Plansza(){
     for (int i = 0; i < m_wiersze; i++) {
          delete[] tab[i];

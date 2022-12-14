@@ -1,4 +1,8 @@
 #include "gra.h"
+#include<QFile>
+#include<fstream>
+
+using namespace std;
 
 Gra::Gra(int i_wiersze, int i_kolumny):plansza(i_wiersze, i_kolumny){}
 
@@ -47,3 +51,47 @@ void Gra::przetrwanie(){
       }
     }
 }
+
+void Gra::zapis(QString sciezka){
+    if(!sciezka.isEmpty()){
+        std::ofstream file(sciezka.toStdString());
+        for(int i=0; i<plansza.size(); i++){
+            for(int j=0; j<plansza.size(); j++){
+            file << i <<" ";
+            file << j <<" ";
+            file << plansza[i][j] << endl;
+            }
+        }
+        file.close();
+        }
+}
+
+void Gra::odczyt(QString sciezka){
+    if(!sciezka.isEmpty()){
+        plansza.clear();
+        int x,y;
+        bool przetrwanie;
+        std::ifstream file(sciezka.toStdString());
+        for(int i=0;!file.eof();i++){
+            file>>x, file>>y, file>>przetrwanie;
+            plansza[x][y] = przetrwanie;
+            }
+        file.close();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

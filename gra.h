@@ -1,6 +1,7 @@
 #ifndef GRA_H
 #define GRA_H
 #include "plansza.h"
+#include<QString>
 
 #include<vector>
 
@@ -16,8 +17,10 @@ public:
 
     int ZliczSasiadow(int x, int y);
 
-    void smierc();
+    void przetrwanie();
     void zycie();
+    void zapis(QString sciezka);
+    void odczyt(QString sciezka);
 };
 
 
