@@ -15,6 +15,9 @@ public:
     void inicjalizacjaStartowa();
 
     int ZliczSasiadow(int x, int y);
+
+    void smierc();
+    void zycie();
 };
 
 

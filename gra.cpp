@@ -8,7 +8,7 @@ void Gra::inicjalizacjaStartowa(){
 if(getCzy_losowac())
      for (int i = 0; i < plansza.getIlwierszy(); i++) {
        for (int j = 0; j < plansza.getIlkolumn(); j++) {
-         this->plansza[i][j] = rand()/RAND_MAX;
+             plansza[i][j] = rand()/RAND_MAX;
        }
      }
     else{
@@ -33,4 +33,17 @@ int Gra::ZliczSasiadow(int x, int y) {
         }
     }
     return liczba_sasiadow;
- }
+}
+
+void Gra::przetrwanie(){
+    for (int i = 0; i < plansza.getIlwierszy(); i++) {
+      for (int j = 0; j < plansza.getIlkolumn(); j++) {
+         if(ZliczSasiadow(plansza.getIlkolumn(),plansza.getIlwierszy()) < 2 || plansza.getIlkolumn(),plansza.getIlwierszy() > 3){
+             plansza[i][j] = 0;
+         }
+         if((plansza.getIlkolumn(),plansza.getIlwierszy()) == 3 && plansza[i][j] == 0){
+             plansza[i][j] = 1;
+         }
+      }
+    }
+}
