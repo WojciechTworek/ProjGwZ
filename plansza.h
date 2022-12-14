@@ -9,41 +9,18 @@ private:
     int m_wiersze;
     bool **tab = nullptr;
 
-    void alokuj(){
-        tab = new bool*[m_kolumny];
-        tab[0] = new bool[m_kolumny*m_wiersze];
-
-        for(int i = 1; i<m_wiersze; i++){
-            tab[i] = &tab[0][i*m_kolumny];
-        }
-    }
-
-    void dealokacja(){
-        delete[] tab[0];
-        delete[] tab;
-        tab=nullptr;
-    }
+    void alokuj();
+    void dealokacja();
 public:
-    Plansza(int wiersze, int kolumny){
-        m_kolumny = kolumny; m_wiersze = wiersze;
-        alokuj();
-    }
+    Plansza(int wiersze, int kolumny);
 
-    int getSzerokosc(){return m_kolumny;}
-    int getWysokosc(){return m_wiersze;}
-    int getIlkom(){return m_kolumny*m_wiersze;}
+    int getSzerokosc();
+    int getWysokosc();
+    int getIlkom();
 
-    void setWielkosc(int wiersze, int kolumny){
+    void setWielkosc(int wiersze, int kolumny);
 
-    }
-
-    ~Plansza(){
-        for (int i = 0; i < m_wiersze; i++) {
-             delete[] tab[i];
-           }
-           delete[] tab;
-    }
-
+    ~Plansza();
 };
 
 #endif // PLANSZA_H
