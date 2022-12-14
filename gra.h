@@ -17,8 +17,6 @@ public:
     int getSzerokosc(){return Szerokosc;}
     int getWysokosc(){return Szerokosc;}
 
-
-
     void inicjalizacjaStartowa(std::vector<std::vector<bool>> plansza) {
      if(getCzy_losowac() == true)
       for (int i = 0; i < rozmiar_planszy; i++) {
