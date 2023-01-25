@@ -14,93 +14,85 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="gridLayoutWidget">
+   <widget class="QSlider" name="WielkoscPlanszy">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>260</y>
-      <width>160</width>
-      <height>80</height>
+      <x>23</x>
+      <y>190</y>
+      <width>171</width>
+      <height>20</height>
      </rect>
     </property>
-    <layout class="QGridLayout" name="gridLayout"/>
-   </widget>
-   <widget class="QSlider" name="horizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>250</y>
-      <width>160</width>
-      <height>16</height>
-     </rect>
+    <property name="value">
+     <number>20</number>
+    </property>
+    <property name="sliderPosition">
+     <number>20</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QSlider" name="horizontalSlider_2">
+   <widget class="QPushButton" name="Start">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>300</y>
-      <width>160</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
+      <x>19</x>
       <y>70</y>
-      <width>151</width>
-      <height>31</height>
+      <width>181</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Start</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="Stop">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>120</y>
-      <width>151</width>
-      <height>31</height>
+      <x>20</x>
+      <y>110</y>
+      <width>181</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Stop</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="Reset">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>170</y>
-      <width>151</width>
-      <height>31</height>
+      <x>19</x>
+      <y>150</y>
+      <width>181</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Reset</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>49</x>
-      <y>353</y>
-      <width>151</width>
-      <height>31</height>
+      <x>20</x>
+      <y>220</y>
+      <width>181</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="text">
      <string>PushButton</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="board">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>0</y>
+      <width>701</width>
+      <height>621</height>
+     </rect>
     </property>
    </widget>
   </widget>
