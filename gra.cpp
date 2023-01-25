@@ -6,22 +6,23 @@ using namespace std;
 
 Gra::Gra(int i_wiersze, int i_kolumny):plansza(i_wiersze, i_kolumny){}
 
+
 bool Gra::getCzy_losowac(){return czy_losowac;}
 
 void Gra::inicjalizacjaStartowa(){
-if(getCzy_losowac())
+//if(getCzy_losowac())
      for (int i = 0; i < plansza.getIlwierszy(); i++) {
        for (int j = 0; j < plansza.getIlkolumn(); j++) {
-             plansza[i][j] = rand()/RAND_MAX;
+             plansza[i][j] = rand()/2;
        }
      }
-    else{
-       for (int i = 0; i < plansza.getIlwierszy(); i++) {
-         for (int j = 0; j < plansza.getIlkolumn(); j++) {
-             plansza[i][j] = 0;
-         }
-       }
-    }
+//    else{
+//       for (int i = 0; i < plansza.getIlwierszy(); i++) {
+//         for (int j = 0; j < plansza.getIlkolumn(); j++) {
+//             plansza[i][j] = 0;
+//         }
+//       }
+//    }
 }
 
 int Gra::ZliczSasiadow(int x, int y) {
@@ -50,6 +51,10 @@ void Gra::przetrwanie(){
          }
       }
     }
+}
+
+bool Gra::czy_zyje(int x, int y){
+    return plansza[x][y];
 }
 
 void Gra::zapis(QString sciezka){

@@ -6,7 +6,7 @@
 #include<vector>
 
 class Gra
-{   bool czy_losowac = false;
+{   bool czy_losowac = true;
     Plansza plansza;
 public:
     Gra(int i_wiersze, int i_kolumny);
@@ -19,7 +19,7 @@ public:
     int ZliczSasiadow(int x, int y);
 
     void przetrwanie();
-    void zycie();
+    bool czy_zyje(int x, int y);
     void zapis(QString sciezka);
     void odczyt(QString sciezka);
 };

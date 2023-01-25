@@ -22,9 +22,11 @@ private slots:
 
     void on_Start_clicked();
 
-    void on_WielkoscPlanszy_valueChanged(int value);
+    void on_wierszePlanszy_valueChanged(int value);
 
     void on_Reset_clicked();
+
+    void on_kolumnyPlanszy_valueChanged(int value);
 
 private:
     Ui::MainWindow *ui;

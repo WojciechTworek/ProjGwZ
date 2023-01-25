@@ -16,19 +16,16 @@ MainWindow::~MainWindow()
 void MainWindow::stworzplansze(){
     scena = new QGraphicsScene(ui->board);
     ui->board->setScene(scena);
-    QBrush szczotka(QColor(230,45,26,150));
+    QBrush szczotka(QColor(90,208,184,150));
     QPen pioro(Qt::black);
 
-    int k[2] ={pl.getIlwierszy(),pl.getIlkolumn()};
+    int il_wie=400/pl.getIlwierszy();
+    int il_kol=400/pl.getIlkolumn();
 
-    int il_wie=400/5;
-    int il_kol=400/5;
+    for(int i=0;i<ui->wierszePlanszy->value();i++){
+        for(int j=0;j<ui->kolumnyPlanszy->value();j++){
 
-    for(int i=0;i<ui->WielkoscPlanszy->value();i++){
-        k[0]=i;
-        for(int j=0;j<ui->WielkoscPlanszy->value();j++){
-            k[1]=j;
-            if(gra.ZliczSasiadow(il_wie,il_kol)){
+            if(0){
                 kwadrat = scena->addRect(il_wie*i,il_kol*j,il_wie,il_kol,pioro,szczotka);
             }
             else{
@@ -44,18 +41,27 @@ void MainWindow::on_Start_clicked()
 }
 
 
-void MainWindow::on_WielkoscPlanszy_valueChanged(int value)
+void MainWindow::on_wierszePlanszy_valueChanged(int value)
 {
-    pl.setWielkosc(value,value);
-}
-
-
-void MainWindow::on_Reset_clicked()
-{
-    pl.clear();
-    gra.getCzy_losowac();
+    pl.setIlwierszy(value);
     stworzplansze();
 }
 
 
+
+void MainWindow::on_Reset_clicked()
+{
+    gra.inicjalizacjaStartowa();
+    stworzplansze();
+}
+
+
+
+
+
+void MainWindow::on_kolumnyPlanszy_valueChanged(int value)
+{
+    pl.setIlkolumn(value);
+    stworzplansze();
+}
 

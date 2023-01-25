@@ -6,102 +6,83 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>922</width>
-    <height>664</height>
+    <width>815</width>
+    <height>613</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QSlider" name="WielkoscPlanszy">
-    <property name="geometry">
-     <rect>
-      <x>23</x>
-      <y>190</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>20</number>
-    </property>
-    <property name="sliderPosition">
-     <number>20</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Start">
-    <property name="geometry">
-     <rect>
-      <x>19</x>
-      <y>70</y>
-      <width>181</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Start</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Stop">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>181</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Stop</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Reset">
-    <property name="geometry">
-     <rect>
-      <x>19</x>
-      <y>150</y>
-      <width>181</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Reset</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_4">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>220</y>
-      <width>181</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="board">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>0</y>
-      <width>701</width>
-      <height>621</height>
-     </rect>
-    </property>
-   </widget>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="Start">
+      <property name="text">
+       <string>Start</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="6">
+     <widget class="QGraphicsView" name="board"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="Stop">
+      <property name="text">
+       <string>Stop</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QPushButton" name="Reset">
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QSlider" name="wierszePlanszy">
+      <property name="minimum">
+       <number>4</number>
+      </property>
+      <property name="value">
+       <number>4</number>
+      </property>
+      <property name="sliderPosition">
+       <number>4</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QSlider" name="kolumnyPlanszy">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="minimum">
+       <number>4</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="pushButton_4">
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>922</width>
+     <width>815</width>
      <height>21</height>
     </rect>
    </property>

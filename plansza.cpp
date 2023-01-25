@@ -43,7 +43,9 @@ int Plansza::size(){
 
 void Plansza::clear(){
     for (int i = 0; i < m_wiersze; i++) {
-        delete[] tab[i];
+        for(int j = 0;j<m_kolumny;j++){
+            tab[i][j] = 0;
+        }
     }
 }
 

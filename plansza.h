@@ -5,8 +5,8 @@
 class Plansza
 {
 private:
-    int m_kolumny;
-    int m_wiersze;
+    int m_kolumny = 4;
+    int m_wiersze = 4;
     bool **tab = nullptr;
 //zmiana wierszy i kolumn na x
     void alokuj();
