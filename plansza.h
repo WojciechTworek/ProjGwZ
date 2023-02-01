@@ -16,6 +16,7 @@ public:
     Plansza(){}
     void setIlkolumn(int m_kol){m_kolumny = m_kol;}
     void setIlwierszy(int m_wie){m_wiersze = m_wie;}
+    void setPlanszaAll(int wiersze,int kolumny);
     void setTab(bool m_tab){m_tab = tab;}
     bool getTab(){return tab;}
     int getIlkolumn();

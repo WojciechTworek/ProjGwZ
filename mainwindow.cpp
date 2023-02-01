@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     gra.setAll(4,4);
+    gra.inicjalizacjaStartowa();
+    stworzplansze();
 }
 
 MainWindow::~MainWindow()

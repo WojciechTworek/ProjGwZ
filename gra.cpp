@@ -76,8 +76,7 @@ void Gra::odczyt(QString sciezka){
 }
 
 void Gra::setAll(int wie, int kol){
-    plansza.setIlwierszy(wie);
-    plansza.setIlkolumn(kol);
+    plansza.setPlanszaAll(wie,kol);
 }
 
 int Gra::get_ilosc_wierszy(){return plansza.getIlwierszy();}
