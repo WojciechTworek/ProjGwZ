@@ -6,15 +6,16 @@
 #include <QTranslator>
 
 void test(){
-    Gra gra(5,5);
-    gra.inicjalizacjaStartowa();
+    Plansza pl(2,2);
+    pl[0][0] = rand()%2;
+    pl[0][1] = rand()%2;
+    pl[1][0] = rand()%2;
+    pl[1][1] = rand()%2;
 
-    if(gra.ZliczSasiadow(1,2) == 0){
-        qDebug() << "Działa";
-    }
-    else{
-        qDebug() << "Nie działa";
-    }
+    qDebug()<<pl[0][0];
+    qDebug()<<pl[0][1];
+    qDebug()<<pl[1][0];
+    qDebug()<<pl[1][1];
 }
 
 int main(int argc, char *argv[])
@@ -30,9 +31,10 @@ int main(int argc, char *argv[])
             break;
         }
     }
+    srand(time(NULL));
     MainWindow w;
-    w.show();
     test();
+    w.show();
     return a.exec();
 
 

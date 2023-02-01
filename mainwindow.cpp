@@ -44,7 +44,7 @@ void MainWindow::on_Losuj_clicked()
 
 void MainWindow::on_wierszePlanszy_valueChanged(int value)
 {
-    gra.setAll(value,gra.get_ilosc_kolumn());
+    gra.wypelnij(value,gra.get_ilosc_kolumn());
     ui->spinBox->setValue(value);
     stworzplansze();
 }
@@ -57,7 +57,7 @@ void MainWindow::on_Reset_clicked()
 
 void MainWindow::on_kolumnyPlanszy_valueChanged(int value)
 {
-    gra.setAll(gra.get_ilosc_wierszy(),value);
+    gra.wypelnij(gra.get_ilosc_wierszy(),value);
     ui->spinBox_2->setValue(value);
     stworzplansze();
 }

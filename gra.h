@@ -17,13 +17,14 @@ public:
     int ZliczSasiadow(int x, int y);
 
     void przetrwanie();
-    void wypelnij(int x, int y,Plansza& plan);
+    void wypelnij(int x, int y);
     void zapis(QString sciezka);
     void odczyt(QString sciezka);
 
     int get_ilosc_wierszy();
     int get_ilosc_kolumn();
-    void setAll(int wie,int kol);
+
+    void setAll(int wie, int kol);
 };
 
 

@@ -28,8 +28,20 @@ void Plansza::setWielkosc(int wiersze,int kolumny){
     Plansza nowa_plansza(wiersze,kolumny);
 
         for(int i = 0;i<wiersze;i++){
+            if(this->getIlwierszy()>i){
             for(int j = 0;j<kolumny;j++){
-                nowa_plansza.tab[i][j] = this->tab[i][j];
+                if(this->getIlkolumn()>j){
+                    nowa_plansza.tab[i][j] = this->tab[i][j];
+                }
+                else{
+                    nowa_plansza.tab[i][j] = 0;
+                }
+            }
+            }
+            else{
+                for(int j = 0;j<kolumny;j++){
+                     nowa_plansza.tab[i][j] = 0;
+                }
             }
         }
 

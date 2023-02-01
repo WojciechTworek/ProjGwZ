@@ -13,7 +13,6 @@ void Gra::inicjalizacjaStartowa(){
              plansza[i][j] = rand()%2;
        }
      }
-
 }
 
 int Gra::ZliczSasiadow(int x, int y) {
@@ -44,9 +43,8 @@ void Gra::przetrwanie(){
     }
 }
 
-void Gra::wypelnij(int x, int y, Plansza& plan){
-    plan.setIlwierszy(x);
-    plan.setIlkolumn(y);
+void Gra::wypelnij(int x, int y){
+    plansza.setWielkosc(x,y);
 }
 
 void Gra::zapis(QString sciezka){
@@ -77,7 +75,7 @@ void Gra::odczyt(QString sciezka){
     }
 }
 
-void Gra::setAll(int wie,int kol){
+void Gra::setAll(int wie, int kol){
     plansza.setIlwierszy(wie);
     plansza.setIlkolumn(kol);
 }
