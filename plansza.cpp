@@ -1,16 +1,16 @@
 #include "plansza.h"
 
 void Plansza::alokuj(){
-    tab = new bool*[m_kolumny];
-    tab[0] = new bool[m_kolumny*m_wiersze];
-
-    for(int i = 1; i<m_wiersze; i++){
-        tab[i] = &tab[0][i*m_kolumny];
+    tab = new bool*[m_wiersze];
+    for(int i = 0; i<m_wiersze; i++){
+        tab[i] = new bool[m_kolumny];
     }
 }
 
 void Plansza::dealokacja(){
-    delete[] tab[0];
+    for(int i = 0; i<m_wiersze; i++){
+        delete[] tab[i];
+    }
     delete[] tab;
     tab=nullptr;
 }
@@ -49,10 +49,9 @@ void Plansza::setWielkosc(int wiersze,int kolumny){
             }
         }
 
+        this->dealokacja();
         setIlwierszy(wiersze);
         setIlkolumn(kolumny);
-
-        this->dealokacja();
         this->tab=nowa_plansza.tab;
         nowa_plansza.tab=nullptr;
 }
