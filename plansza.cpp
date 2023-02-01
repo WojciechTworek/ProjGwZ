@@ -1,5 +1,5 @@
 #include "plansza.h"
-
+#include <QDebug>
 void Plansza::alokuj(){
     tab = new bool*[m_wiersze];
     for(int i = 0; i<m_wiersze; i++){
@@ -30,7 +30,6 @@ int Plansza::getIlwierszy(){return m_wiersze;}
 
 void Plansza::setWielkosc(int wiersze,int kolumny){
     Plansza nowa_plansza(wiersze,kolumny);
-
         for(int i = 0;i<wiersze;i++){
             if(this->getIlwierszy()>i){
             for(int j = 0;j<kolumny;j++){
@@ -54,10 +53,6 @@ void Plansza::setWielkosc(int wiersze,int kolumny){
         setIlkolumn(kolumny);
         this->tab=nowa_plansza.tab;
         nowa_plansza.tab=nullptr;
-}
-
-int Plansza::size(){
-    return (m_kolumny*m_wiersze);
 }
 
 void Plansza::clear(){

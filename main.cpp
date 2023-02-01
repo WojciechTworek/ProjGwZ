@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
     }
     srand(time(NULL));
     MainWindow w;
-    test();
+    //test();
     w.show();
     return a.exec();
 

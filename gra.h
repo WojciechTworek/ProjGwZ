@@ -21,9 +21,10 @@ public:
     void zapis(QString sciezka);
     void odczyt(QString sciezka);
 
+    void Czysc();
     int get_ilosc_wierszy();
     int get_ilosc_kolumn();
-
+    bool getCzyZyje(int w,int k);
     void setAll(int wie, int kol);
 };
 

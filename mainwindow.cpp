@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     gra.setAll(4,4);
-    gra.inicjalizacjaStartowa();
+    gra.Czysc();
     stworzplansze();
 }
 
@@ -26,13 +26,14 @@ void MainWindow::stworzplansze(){
 
     int il_wie=490/gra.get_ilosc_wierszy();
     int il_kol=500/gra.get_ilosc_kolumn();
+
     for(int i=0;i<ui->wierszePlanszy->value();i++){
         for(int j=0;j<ui->kolumnyPlanszy->value();j++){
-            if(0){
-                kwadrat = scena->addRect(il_wie*i,il_kol*j,il_wie,il_kol,pioro,szczotka);
+            if(gra.getCzyZyje(i,j)){
+                kwadrat = scena->addRect(il_kol*j,il_wie*i,il_kol,il_wie,pioro,szczotka);
             }
             else{
-                kwadrat = scena->addRect(il_wie*i,il_kol*j,il_wie,il_kol,pioro);
+                kwadrat = scena->addRect(il_kol*j,il_wie*i,il_kol,il_wie,pioro);
             }
         }
     }
@@ -53,7 +54,7 @@ void MainWindow::on_wierszePlanszy_valueChanged(int value)
 
 void MainWindow::on_Reset_clicked()
 {
-    //pl.clear();
+    gra.Czysc();
     stworzplansze();
 }
 
@@ -83,16 +84,13 @@ void MainWindow::on_Ladowanie_clicked()
     files = nullptr;
 }
 
-
 void MainWindow::on_Zapis_clicked()
 {
     windowFilePath2();
     gra.zapis(files);
 }
 
-
-
 void MainWindow::windowFilePath2(){
-    QString file = QFileDialog::getOpenFileName(this,"Zapis","","Zapis (*.txt)");
+    QString file = QFileDialog::getSaveFileName(this,"Zapis","","Zapis (*.txt)");
     if(!file.isEmpty()) files = file;
 }

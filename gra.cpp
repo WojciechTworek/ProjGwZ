@@ -22,7 +22,7 @@ int Gra::ZliczSasiadow(int x, int y) {
             if (i == 0 && j == 0) {continue;}
             int pomoc_x = x + i;
             int pomoc_y = y + j;
-            if (pomoc_x >= 0 && pomoc_x < plansza.getIlkolumn()&& pomoc_y >= 0 && pomoc_y < plansza.getIlwierszy()) {
+            if (pomoc_x >= 0 && pomoc_x < plansza.getIlwierszy()&& pomoc_y >= 0 && pomoc_y < plansza.getIlkolumn()) {
                  if (plansza[pomoc_x ][pomoc_y ]) {liczba_sasiadow++;}
             }
         }
@@ -33,10 +33,11 @@ int Gra::ZliczSasiadow(int x, int y) {
 void Gra::przetrwanie(){
     for (int i = 0; i < plansza.getIlwierszy(); i++) {
       for (int j = 0; j < plansza.getIlkolumn(); j++) {
-         if(ZliczSasiadow(plansza.getIlkolumn(),plansza.getIlwierszy()) < 2 || plansza.getIlkolumn(),plansza.getIlwierszy() > 3){
+         int liczba = ZliczSasiadow(i,j);
+         if((liczba < 2 && plansza[i][j] == 1) || (liczba > 3 && plansza[i][j] == 1)){
              plansza[i][j] = 0;
          }
-         if((plansza.getIlkolumn(),plansza.getIlwierszy()) == 3 && plansza[i][j] == 0){
+         if(liczba == 3 && plansza[i][j] == 0){
              plansza[i][j] = 1;
          }
       }
@@ -47,11 +48,27 @@ void Gra::wypelnij(int x, int y){
     plansza.setWielkosc(x,y);
 }
 
+bool Gra::getCzyZyje(int w,int k){
+    return plansza[w][k];
+}
+
+void Gra::setAll(int wie, int kol){
+    plansza.setPlanszaAll(wie,kol);
+}
+
+void Gra::Czysc(){
+    plansza.clear();
+}
+
+int Gra::get_ilosc_wierszy(){return plansza.getIlwierszy();}
+
+int Gra::get_ilosc_kolumn(){return plansza.getIlkolumn();}
+
 void Gra::zapis(QString sciezka){
     if(!sciezka.isEmpty()){
         std::ofstream file(sciezka.toStdString()); // otwieranie pliku z podanej ścieżki do zapisu
-        for(int i=0; i<plansza.size(); i++){
-            for(int j=0; j<plansza.size(); j++){
+        for(int i=0; i<plansza.getIlwierszy(); i++){
+            for(int j=0; j<plansza.getIlkolumn(); j++){
             file << i <<" ";
             file << j <<" ";
             file << plansza[i][j] << endl;
@@ -74,25 +91,3 @@ void Gra::odczyt(QString sciezka){
         file.close();
     }
 }
-
-void Gra::setAll(int wie, int kol){
-    plansza.setPlanszaAll(wie,kol);
-}
-
-int Gra::get_ilosc_wierszy(){return plansza.getIlwierszy();}
-
-int Gra::get_ilosc_kolumn(){return plansza.getIlkolumn();}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
