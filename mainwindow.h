@@ -20,7 +20,7 @@ public:
 
 private slots:
 
-    void on_Start_clicked();
+    void on_Losuj_clicked();
 
     void on_wierszePlanszy_valueChanged(int value);
 
@@ -28,11 +28,18 @@ private slots:
 
     void on_kolumnyPlanszy_valueChanged(int value);
 
+    void on_Iteracja_clicked();
+    void windowFilePath();
+    void windowFilePath2();
+
+    void on_Ladowanie_clicked();
+
+    void on_Zapis_clicked();
+
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scena;
     Gra gra;
-    Plansza pl;
     QGraphicsRectItem *kwadrat;
     QString files;
 };

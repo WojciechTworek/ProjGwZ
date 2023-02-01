@@ -7,10 +7,9 @@
 
 void test(){
     Gra gra(5,5);
-
     gra.inicjalizacjaStartowa();
 
-    if(gra.ZliczSasiadow(2,3) == 0){
+    if(gra.ZliczSasiadow(1,2) == 0){
         qDebug() << "Działa";
     }
     else{

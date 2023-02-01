@@ -1,28 +1,19 @@
 #include "gra.h"
 #include<QFile>
 #include<fstream>
+#include<cstdlib>
 
 using namespace std;
 
 Gra::Gra(int i_wiersze, int i_kolumny):plansza(i_wiersze, i_kolumny){}
 
-
-bool Gra::getCzy_losowac(){return czy_losowac;}
-
 void Gra::inicjalizacjaStartowa(){
-//if(getCzy_losowac())
      for (int i = 0; i < plansza.getIlwierszy(); i++) {
        for (int j = 0; j < plansza.getIlkolumn(); j++) {
-             plansza[i][j] = rand()/2;
+             plansza[i][j] = rand()%2;
        }
      }
-//    else{
-//       for (int i = 0; i < plansza.getIlwierszy(); i++) {
-//         for (int j = 0; j < plansza.getIlkolumn(); j++) {
-//             plansza[i][j] = 0;
-//         }
-//       }
-//    }
+
 }
 
 int Gra::ZliczSasiadow(int x, int y) {
@@ -53,8 +44,9 @@ void Gra::przetrwanie(){
     }
 }
 
-bool Gra::czy_zyje(int x, int y){
-    return plansza[x][y];
+void Gra::wypelnij(int x, int y, Plansza& plan){
+    plan.setIlwierszy(x);
+    plan.setIlkolumn(y);
 }
 
 void Gra::zapis(QString sciezka){
@@ -85,7 +77,14 @@ void Gra::odczyt(QString sciezka){
     }
 }
 
+void Gra::setAll(int wie,int kol){
+    plansza.setIlwierszy(wie);
+    plansza.setIlkolumn(kol);
+}
 
+int Gra::get_ilosc_wierszy(){return plansza.getIlwierszy();}
+
+int Gra::get_ilosc_kolumn(){return plansza.getIlkolumn();}
 
 
 

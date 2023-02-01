@@ -6,22 +6,24 @@
 #include<vector>
 
 class Gra
-{   bool czy_losowac = true;
+{
     Plansza plansza;
 public:
     Gra(int i_wiersze, int i_kolumny);
     Gra(){}
-
-    bool getCzy_losowac();
 
     void inicjalizacjaStartowa();
 
     int ZliczSasiadow(int x, int y);
 
     void przetrwanie();
-    bool czy_zyje(int x, int y);
+    void wypelnij(int x, int y,Plansza& plan);
     void zapis(QString sciezka);
     void odczyt(QString sciezka);
+
+    int get_ilosc_wierszy();
+    int get_ilosc_kolumn();
+    void setAll(int wie,int kol);
 };
 
 
