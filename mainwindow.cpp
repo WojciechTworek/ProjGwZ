@@ -94,3 +94,14 @@ void MainWindow::windowFilePath2(){
     QString file = QFileDialog::getSaveFileName(this,"Zapis","","Zapis (*.txt)");
     if(!file.isEmpty()) files = file;
 }
+
+void MainWindow::on_spinBox_valueChanged(int value)
+{
+    ui->wierszePlanszy->setValue(value);
+}
+
+void MainWindow::on_spinBox_2_valueChanged(int value)
+{
+    ui->kolumnyPlanszy->setValue(value);
+}
+
